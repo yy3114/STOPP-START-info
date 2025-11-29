@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>STOPP/START 準則：老年人藥物治療指南</title>
+    <!-- 引入 Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #f7f9fb;
+        }
+        /* Custom scrollbar for better appearance */
+        .drug-list-container::-webkit-scrollbar {
+            width: 8px;
+        }
+        .drug-list-container::-webkit-scrollbar-thumb {
+            background-color: #a8a29e;
+            border-radius: 4px;
+        }
+        .drug-list-container::-webkit-scrollbar-track {
+            background-color: #f1f1f1;
+        }
+        .text-section-title {
+            @apply text-2xl font-bold text-gray-800 border-b-2 border-primary-red/50 pb-2 mb-4;
+        }
+    </style>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        'primary-red': '#b91c1c', /* For STOPP */
+                        'primary-green': '#059669', /* For START */
+                        'bg-light': '#fefcfc',
+                    }
+                }
+            }
+        }
+    </script>
+</head>
+<body class="p-4 sm:p-8 min-h-screen flex items-start justify-center">
+
+    <div class="w-full max-w-5xl bg-bg-light shadow-2xl rounded-xl p-6 sm:p-10 border border-gray-100">
+
+        <!-- 標題 -->
+        <header class="text-center mb-8 sm:mb-12">
+            <h1 class="text-3xl sm:text-5xl font-extrabold text-gray-800 mb-2">
+                STOPP / START 準則
+            </h1>
+            <p class="text-lg sm:text-xl text-gray-600 font-medium italic">
+                提升老年人處方品質的雙向篩選工具
+            </p>
+        </header>
+
+        <!-- 簡介 -->
+        <section class="mb-10 p-6 bg-gray-50 rounded-lg shadow-inner border-l-4 border-gray-300">
+            <h2 class="text-xl sm:text-2xl font-bold text-gray-800 mb-3">
+                工具概覽
+            </h2>
+            <p class="text-gray-700 leading-relaxed text-base">
+                STOPP 和 START 準則是一套互補的工具，旨在協助臨床醫生為老年人（通常是 65 歲及以上）優化藥物治療。這套準則涵蓋了多個生理系統，是當今老年醫學中<span class="font-semibold text-primary-red">去處方化 (Deprescribing)</span> 和<span class="font-semibold text-primary-green">適當處方化 (Appropriate Prescribing)</span> 的重要參考依據。
+            </p>
+            <ul class="mt-4 space-y-2">
+                <li class="flex items-center text-primary-red font-semibold">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 mr-2" viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm1-12a1 1 0 10-2 0v4a1 1 0 001 1h2a1 1 0 100-2h-1V6z" clip-rule="evenodd" /></svg>
+                    STOPP (Screening Tool of Older Person's Prescriptions)：關注<span class="underline">潛在不適當的藥物 (PIMs)</span>，即應該<span class="font-extrabold">停止 (STOP)</span> 使用的藥物。
+                </li>
+                <li class="flex items-center text-primary-green font-semibold">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 mr-2" viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm-1-11a1 1 0 102 0v3h3a1 1 0 100-2h-3V7z" clip-rule="evenodd" /></svg>
+                    START (Screening Tool to Alert doctors to Right Treatment)：關注<span class="underline">潛在藥物遺漏 (PPOs)</span>，即應該<span class="font-extrabold">開始 (START)</span> 使用的藥物。
+                </li>
+            </ul>
+        </section>
+
+        <!-- 內容分割：STOPP 和 START -->
+        <div class="grid grid-cols-1 lg:grid-cols-2 gap-8">
+
+            <!-- STOPP 區塊：潛在不適當的藥物 (PIMs) -->
+            <div class="p-6 bg-white rounded-lg shadow-xl border-t-8 border-primary-red">
+                <h2 class="text-3xl font-extrabold text-primary-red mb-4 flex items-center">
+                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2.5" stroke="currentColor" class="w-7 h-7 mr-2">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12" />
+                    </svg>
+                    STOPP 準則：應停止的藥物
+                </h2>
+                <p class="mb-5 text-gray-700">
+                    以下列舉了老年患者中常見的潛在不適當藥物 (PIMs) 類別和具體藥物範例。
+                </p>
+
+                <div class="space-y-4 drug-list-container max-h-96 overflow-y-auto pr-2">
+
+                    <!-- 範例 1: CNS - 鎮靜劑 -->
+                    <div class="p-3 border border-red-200 bg-red-50 rounded-lg">
+                        <p class="font-semibold text-gray-900 mb-1">
+                            中樞神經系統 (CNS) - 長效鎮靜劑
+                        </p>
+                        <p class="text-sm text-red-700 italic">
+                            應避免用於失眠、焦慮或慢性疼痛超過 4 週，因跌倒和認知障礙風險極高。
+                        </p>
+                        <p class="text-sm font-mono text-red-900 mt-1">
+                            <span class="font-bold">藥物範例：</span> 苯二氮平類藥物 (Benzodiazepines)，如 **Diazepam** (地西泮), **Flunitrazepam** (氟硝西泮) 等。
+                        </p>
+                    </div>
+
+                    <!-- 範例 2: CVS - NSAIDs -->
+                    <div class="p-3 border border-red-200 bg-red-50 rounded-lg">
+                        <p class="font-semibold text-gray-900 mb-1">
+                            心血管系統 (CVS) - NSAIDs
+                        </p>
+                        <p class="text-sm text-red-700 italic">
+                            用於患有心力衰竭、高血壓控制不佳或慢性腎功能衰竭的患者，會導致液體瀦留或腎功能惡化。
+                        </p>
+                        <p class="text-sm font-mono text-red-900 mt-1">
+                            <span class="font-bold">藥物範例：</span> 非類固醇抗炎藥 (NSAIDs)，如 **Ibuprofen** (布洛芬), **Diclofenac** (雙氯芬酸) 等。
+                        </p>
+                    </div>
+
+                    <!-- 範例 3: GIT - PPIs -->
+                    <div class="p-3 border border-red-200 bg-red-50 rounded-lg">
+                        <p class="font-semibold text-gray-900 mb-1">
+                            胃腸道系統 (GIT) - 長期 PPIs
+                        </p>
+                        <p class="text-sm text-red-700 italic">
+                            連續使用質子泵抑制劑超過 8 週而無明確適應症，可能增加感染 (如困難梭狀芽孢桿菌) 和骨折風險。
+                        </p>
+                        <p class="text-sm font-mono text-red-900 mt-1">
+                            <span class="font-bold">藥物範例：</span> 質子泵抑制劑 (PPIs)，如 **Omeprazole** (奧美拉唑), **Lansoprazole** (蘭索拉唑) 等。
+                        </p>
+                    </div>
+                    
+                    <!-- 範例 4: 腎臟系統 - 利尿劑劑量過高 -->
+                    <div class="p-3 border border-red-200 bg-red-50 rounded-lg">
+                        <p class="font-semibold text-gray-900 mb-1">
+                            腎臟系統 - 高劑量利尿劑
+                        </p>
+                        <p class="text-sm text-red-700 italic">
+                            長期使用高劑量袢利尿劑 (Loop Diuretics) 作為治療周邊水腫的一線藥物，沒有適當的臨床指徵，可能導致脫水和電解質紊亂。
+                        </p>
+                        <p class="text-sm font-mono text-red-900 mt-1">
+                            <span class="font-bold">藥物範例：</span> **Furosemide** (呋塞米), **Bumetanide** (布美他尼) 等。
+                        </p>
+                    </div>
+
+                </div>
+            </div>
+
+            <!-- START 區塊：潛在藥物遺漏 (PPOs) -->
+            <div class="p-6 bg-white rounded-lg shadow-xl border-t-8 border-primary-green">
+                <h2 class="text-3xl font-extrabold text-primary-green mb-4 flex items-center">
+                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2.5" stroke="currentColor" class="w-7 h-7 mr-2">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M12 4.5v15m7.5-7.5h-15" />
+                    </svg>
+                    START 準則：應開始的藥物
+                </h2>
+                <p class="mb-5 text-gray-700">
+                    以下列舉了老年患者中常見的潛在藥物遺漏 (PPOs) 類別和具體藥物範例。
+                </p>
+
+                <div class="space-y-4 drug-list-container max-h-96 overflow-y-auto pr-2">
+
+                    <!-- 範例 1: CVS - 心臟病 -->
+                    <div class="p-3 border border-green-200 bg-green-50 rounded-lg">
+                        <p class="font-semibold text-gray-900 mb-1">
+                            心血管系統 (CVS) - 慢性心力衰竭
+                        </p>
+                        <p class="text-sm text-primary-green italic">
+                            患有穩定性收縮性心力衰竭，若無禁忌症，應考慮使用 ACE 抑製劑。
+                        </p>
+                        <p class="text-sm font-mono text-green-900 mt-1">
+                            <span class="font-bold">藥物範例：</span> ACE 抑製劑 (ACEI)，如 **Lisinopril** (賴諾普利), **Enalapril** (依那普利)；或 ARB，如 **Losartan** (氯沙坦) 等。
+                        </p>
+                    </div>
+
+                    <!-- 範例 2: CNS - 癡呆症 -->
+                    <div class="p-3 border border-green-200 bg-green-50 rounded-lg">
+                        <p class="font-semibold text-gray-900 mb-1">
+                            中樞神經系統 (CNS) - 輕度至中度阿茲海默症
+                        </p>
+                        <p class="text-sm text-primary-green italic">
+                            輕度至中度癡呆症患者，應考慮使用乙醯膽鹼酯酶抑製劑以延緩認知功能衰退。
+                        </p>
+                        <p class="text-sm font-mono text-green-900 mt-1">
+                            <span class="font-bold">藥物範例：</span> 乙醯膽鹼酯酶抑製劑，如 **Donepezil** (多奈哌齊), **Rivastigmine** (卡巴拉汀) 等。
+                        </p>
+                    </div>
+
+                    <!-- 範例 3: 骨骼肌肉系統 - 骨質疏鬆 -->
+                    <div class="p-3 border border-green-200 bg-green-50 rounded-lg">
+                        <p class="font-semibold text-gray-900 mb-1">
+                            骨骼肌肉系統 - 骨質疏鬆
+                        </p>
+                        <p class="text-sm text-primary-green italic">
+                            若患有骨質疏鬆或有跌倒骨折風險，應考慮處方維生素 D 和鈣補充劑。
+                        </p>
+                        <p class="text-sm font-mono text-green-900 mt-1">
+                            <span class="font-bold">藥物範例：</span> 雙磷酸鹽類藥物 (Bisphosphonates)，如 **Alendronate** (阿侖膦酸鈉)；以及<span class="font-bold">維生素 D / 鈣片</span>。
+                        </p>
+                    </div>
+
+                    <!-- 範例 4: 內分泌系統 - 糖尿病 -->
+                    <div class="p-3 border border-green-200 bg-green-50 rounded-lg">
+                        <p class="font-semibold text-gray-900 mb-1">
+                            內分泌系統 - 糖尿病
+                        </p>
+                        <p class="text-sm text-primary-green italic">
+                            患有第 2 型糖尿病，HbA1c 水平超過目標範圍（通常是 7.0-8.5%），應考慮使用口服降糖藥物或胰島素。
+                        </p>
+                        <p class="text-sm font-mono text-green-900 mt-1">
+                            <span class="font-bold">藥物範例：</span> **Metformin** (二甲雙胍), 磺脲類藥物 (Sulphonylureas) 等。
+                        </p>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+
+        <!-- 註釋 -->
+        <footer class="mt-10 pt-6 border-t border-gray-200 text-sm text-gray-500 italic">
+            <p>
+                **注意：** 此處列出的藥物和準則僅為常見範例，實際的 STOPP/START 準則包含了數百項具體建議。在臨床實踐中，藥物調整必須基於患者的個體化狀況、共病症、預期壽命和治療目標。
+            </p>
+        </footer>
+
+    </div>
+
+</body>
+</html>
+
